@@ -26,9 +26,10 @@ inquirer
     },
 ])
 
-.then(({text, textColor, shape, shapeColor}) => {
+.then((data) => {
+    const {text, textColor, shape, shapeColor}= data;
 
-    var newlogoShape;
+    let newlogoShape;
 
     switch (shape) {
         case "triangle":
@@ -42,6 +43,5 @@ inquirer
             break;
     }
 
-    const {shape, text, textColor, shapeColor}= data;
 fs.writeFile("examples\logo.svg", newlogoShape(data), (err) =>
-    err ? console.error(err) : console.log("Generated logo.svg"))})
+    err ? console.error(err) : console.log("Generated logo.svg"))});
