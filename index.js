@@ -1,9 +1,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const {circle, triangle , square} = require("lib\shapes.js");
+const {Circle, Triangle , Square} = require("./lib/shapes");
 
 inquirer
-.promp([
+.prompt([
     {
         type: "input",
         message: "What text would you like to put in your logo?",
@@ -18,6 +18,9 @@ inquirer
         type: "list",
         message: "Please select the shape you would like your logo to be",
         name: "shape,",
+        choices: ['triangle', 'circle', 'square'],
+        
+        
     },
     {
         type: "input",
@@ -29,19 +32,19 @@ inquirer
 .then((data) => {
     const {text, textColor, shape, shapeColor}= data;
 
-    let newlogoShape;
+    var newLogo;
 
     switch (shape) {
         case "triangle":
-            newlogoShape = new triangle(text, textColor, shapeColor)
+            newLogo = new Triangle(text, textColor, shapeColor);
             break;
         case "square":
-            newlogoShape = new square(text, textColor, shapeColor)
+            newLogo = new Square(text, textColor, shapeColor);
             break;
         case "circle":
-            newlogoShape = new circle(text, textColor, shapeColor)
+            newLogo = new Circle(text, textColor, shapeColor);
             break;
     }
 
-fs.writeFile("examples\logo.svg", newlogoShape(data), (err) =>
-    err ? console.error(err) : console.log("Generated logo.svg"))});
+fs.writeFileSync("./examples/logo.svg", newLogo.getHTML())
+});
