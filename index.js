@@ -46,5 +46,5 @@ inquirer
             break;
     }
 
-fs.writeFileSync("./examples/logo.svg", newLogo.getHTML())
+fs.writeFileSync("./examples/logo.svg", newLogo.getSVGlogo())
 });
