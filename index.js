@@ -26,10 +26,22 @@ inquirer
     },
 ])
 
+.then(({text, textColor, shape, shapeColor}) => {
 
+    var newlogoShape;
 
+    switch (shape) {
+        case "triangle":
+            newlogoShape = new triangle(text, textColor, shapeColor)
+            break;
+        case "square":
+            newlogoShape = new square(text, textColor, shapeColor)
+            break;
+        case "circle":
+            newlogoShape = new circle(text, textColor, shapeColor)
+            break;
+    }
 
-.then((data) => {
-    fs.writeFile("examples\logo.svg", shapeGenerator(data), (err) =>
-    err ? console.error(err) : console.log("Generated logo.svg")
-)});
+    const {shape, text, textColor, shapeColor}= data;
+fs.writeFile("examples\logo.svg", newlogoShape(data), (err) =>
+    err ? console.error(err) : console.log("Generated logo.svg"))})
