@@ -24,6 +24,9 @@ The motivation behind this project was to create a logo with user choice of colo
 <li> To trigger the logo generator prompts, run "node index.js" in the same terminal and answer all 4 prompts </li>
 <li> Once all prompts are answer, user will be notified with "Generated in logo.svg" </li>
 <li> Right click on logo.svg in Example folder and select Open Live Server to see the generated logo in your default browser </li>
+<br>
+
+![alt=example-generated-logo](./logo-img.png)
 
 ## Links
 
@@ -32,6 +35,8 @@ Github Repo Link:
 https://github.com/nathantr97/Get-Ya-A-Logo
 
 Demo Video GoogleDrive Link: 
+
+https://drive.google.com/file/d/1b_7f0f3vNu-1GVo5-41JASx6jYb5S8m4/view
 
 
 
